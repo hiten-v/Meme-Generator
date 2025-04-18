@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="outer">
+    <div class="chat-container">
+        <h2>Meme Generator Chatbot</h2>
+        <input type="text" id="meme_query" placeholder="Enter meme description (e.g., 'Drake')">
+        <button onclick="searchMeme()">Search Meme</button>
+        <select id="template_id"></select>
+        <input type="text" id="top_text" placeholder="Top Text">
+        <input type="text" id="bottom_text" placeholder="Bottom Text">
+        <button onclick="generateMeme()">Generate Meme</button>
+        <div id="meme-result"></div>
+    </div>
+
+
+    <div id="chatbot-toggle" onclick="toggleChatbot()">🤖</div>
+
+    
+    <div id="chatbot-container" style="display: none;">
+        <div id="chatbot-header">Help Bot <span onclick="toggleChatbot()" style="cursor:pointer;">❌</span></div>
+        <div id="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Ask me how to use this..." onkeydown="if(event.key==='Enter')sendChatbotMessage()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
